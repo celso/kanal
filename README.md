@@ -20,7 +20,7 @@ Follow these steps to get your OAuth keys:
  
     1. Grab the Client ID and Client Secret and then paste them into the kanal_oauth.php file
 
- * Place the kanal_oauth.php script (with the keys) in a PHP webserver of yours eg: http://myphpserverurl.eu/kanal_oauth.php
+ * Place the [kanal_oauth.php](https://github.com/celso/kanal/blob/master/kanal_oauth.php) script (with the keys) in a PHP webserver of yours eg: http://myphpserverurl.eu/kanal_oauth.php
  
  * Make sure the OAuth redirect URI for your app at http://kanal.pt/developer/application/listing is the same: http://myphpserverurl.eu/kanal_oauth.php
  
@@ -35,6 +35,6 @@ Follow these steps to get your OAuth keys:
 Using the class
 ===============
 
-It's self explanatory, check the kanal_unit_tests.php script and the Meo Kanal API documentation at http://kanal.pt/developer/console#intro_doc
+It's self explanatory, check the [kanal_unit_tests.php](https://github.com/celso/kanal/blob/master/kanal_unit_tests.php) script and the Meo Kanal API documentation at http://kanal.pt/developer/console#intro_doc
 
 This is a work in progress
