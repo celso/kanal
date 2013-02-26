@@ -28,9 +28,15 @@ $kanal=new Kanal( $clientId, $clientSecret, $accessToken );
 
 // Get all of video collection, from offset 0 to 10000
 // http://kanal.pt/developer/console#get_videos_doc
-
 echo " * running listVideos\n";
 $r=$kanal->listVideos( 0, 10000 );
+print_r($r);
+exit;
+kResponse($r);
+
+# http://kanal.pt/developer/console#get_channel_by_search_doc
+echo " * running searchChannels\n";
+$r=$kanal->searchChannels('humor');
 kResponse($r);
 
 # http://kanal.pt/developer/console#get_channels_doc
@@ -38,6 +44,11 @@ echo " * running listChannels\n";
 $r=$kanal->listChannels();
 kResponse($r);
 $channel_id=$r[0]->channel_id;
+
+# http://kanal.pt/developer/console#get_channel_by_id_doc
+echo " * running channelDetails\n";
+$r=$kanal->channelDetails( $channel_id );
+kResponse($r);
 
 # http://kanal.pt/developer/console#get_schedule_doc
 echo " * running listSchedule\n";

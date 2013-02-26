@@ -16,6 +16,28 @@ class Kanal {
         $this->api_path="https://services.sapo.pt/IPTV/MEO/Kanal/api/";
     }
 
+    function channelDetails( $chan ) {
+        $r=$this->tools->post( $this->api_path."channels/".$chan."?access_token=".$this->accessToken );
+        if ( $this->tools->last_code!=401 ) {
+            $r=json_decode( $r );
+            if ( $r->success==1 ) {
+                return $r->data->channels[0];
+            }
+        }
+        return false;
+    }
+
+    function searchChannels( $query, $offset = 0, $limit = 15 ) {
+        $r=$this->tools->post( $this->api_path."channels?q=".$query."&offset=".$offset."&limit=".$limit."?access_token=".$this->accessToken );
+        if ( $this->tools->last_code!=401 ) {
+            $r=json_decode( $r );
+            if ( $r->success==1 ) {
+                return $r->data->channels;
+            }
+        }
+        return false;
+    }
+
     function listChannels() {
         $r=$this->tools->post( $this->api_path."channels?access_token=".$this->accessToken );
         if ( $this->tools->last_code!=401 ) {
