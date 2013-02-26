@@ -30,8 +30,6 @@ $kanal=new Kanal( $clientId, $clientSecret, $accessToken );
 // http://kanal.pt/developer/console#get_videos_doc
 echo " * running listVideos\n";
 $r=$kanal->listVideos( 0, 10000 );
-print_r($r);
-exit;
 kResponse($r);
 
 # http://kanal.pt/developer/console#get_channel_by_search_doc
